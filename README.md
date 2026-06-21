@@ -47,11 +47,11 @@ kubectl port-forward svc/orders-service 8080:80
 El workflow en `.github/workflows/ci-cd.yml`:
 
 1. Restaura y ejecuta pruebas.
-2. Construye y publica imagen Docker con tag SHA.
+2. Construye y publica imagen Docker con tag SHA en GHCR.
 3. Actualiza `values-prod.yaml` en el repo de despliegue.
 4. ArgoCD detecta el commit y sincroniza el cluster.
 
 Secrets requeridos:
 
-- `DEPLOY_REPO` (formato `owner/repo`, valor: `leog125/orders-service-deploy`)
+- `DEPLOY_REPO` (valor: `leog125/orders-service-deploy`)
 - `DEPLOY_REPO_TOKEN` (PAT con permiso de push al repo de despliegue)
