@@ -15,7 +15,7 @@ WORKDIR /app
 COPY --from=build /app/publish .
 
 # Run as non-root user
-RUN adduser --disabled-password --gecos "" appuser
+RUN useradd --no-create-home --shell /bin/false appuser
 USER appuser
 
 EXPOSE 8080
