@@ -29,8 +29,8 @@ dotnet test
 ## Docker
 
 ```bash
-docker build -t YOUR_USER/orders-service:1.0.0 .
-docker run -p 8080:8080 YOUR_USER/orders-service:1.0.0
+docker build -t ghcr.io/leog125/orders-service:1.0.0 .
+docker run -p 8080:8080 ghcr.io/leog125/orders-service:1.0.0
 curl http://localhost:8080/health
 ```
 
@@ -53,7 +53,5 @@ El workflow en `.github/workflows/ci-cd.yml`:
 
 Secrets requeridos:
 
-- `REGISTRY_USER`
-- `REGISTRY_PASSWORD`
-- `DEPLOY_REPO` (formato `owner/repo`)
+- `DEPLOY_REPO` (formato `owner/repo`, valor: `leog125/orders-service-deploy`)
 - `DEPLOY_REPO_TOKEN` (PAT con permiso de push al repo de despliegue)
