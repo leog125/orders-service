@@ -4,7 +4,7 @@ var app = builder.Build();
 app.MapGet("/health", () => Results.Ok(new { status = "Healthy" }));
 
 app.MapGet("/orders/{id:int}", (int id) =>
-    Results.Ok(new { Id = id, Product = "Teclado mecanicoo", Status = "Pending" }));
+    Results.Ok(new { Id = id, Product = $"Teclado mecanico {id}", Status = "Pending" }));
 
 app.Run();
 
